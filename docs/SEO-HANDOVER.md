@@ -297,3 +297,17 @@ No performance scores are claimed.
 - **Inner pages:** new H1s and intros as specified (agency, host, guides, about, contact). All requirements, steps, FAQs, URLs and invite codes are unchanged. The agency hero note now links to login help.
 - **Footer intro:** "Independent support for Hiiclub agency and host registration."
 - **Theme colours:** CSS `:root` tokens (`--accent`, `--accent-soft`, `--text`, …) at the top of `style.css`.
+
+## 13. Policy content pass (29 Oct 2026, fourth pass)
+
+- **Source:** the owner's written summary of the Hiiclub policy presentation, supplied in chat. The PDF itself was **not** received. Figures are published exactly as supplied, labelled "supplied policy". There is no effective date in the source.
+- **Homepage:**
+  - new title "Hiiclub Agency | Agency & Host Registration" and new meta description;
+  - 11 sections per the brief: call-rate table (`#call-rates`), commission table (`#commission-tiers`), settlement (`#settlement`), login/OMS (`#agency-login`), app download (`#app-download`), 6 FAQs (schema matched).
+- **Agency page:** `#commission` now shows the 7-level table; a new `#settlement` section was added.
+- **Host page:** `#earnings` now shows the call-rate table; the face-visibility rule was added to verification; the salary FAQ was aligned.
+- **Guides hub:** cards retitled; a settlement card was added.
+- **About:** the accuracy paragraph now explains the policy source.
+- **Footer:** publisher disclaimer and policy-reference line.
+- **Deliberately excluded:** the PDF's 9% / ₹61,000 worked example, which is inconsistent with its own table (its amounts sum to ₹61,500).
+- **Design:** the eyebrow, left-aligned hero, arrow buttons, outlined menu button and larger wordmark follow the owner's Fono screenshot. Fono's CSS could not be inspected (domain blocked), so the font is still Manrope (unverified match).

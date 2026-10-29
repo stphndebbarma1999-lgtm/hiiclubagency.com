@@ -33,7 +33,7 @@
 
   <!-- Font (self-hosted Manrope) + stylesheet -->
   <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261029-5">
+  <link rel="stylesheet" href="style.css?v=20261029-6">
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -100,7 +100,7 @@
           "name": "Is there a fixed income or salary for hosts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We cannot promise any income. Host earnings follow the app’s current rules and your activity on it, and they can change. Confirm the details inside the app before you rely on them."
+            "text": "No fixed salary is promised. The supplied policy lists call rates, gift earnings and task rewards, and earnings depend on qualifying activity and the applicable account rules. Confirm the details inside the app before you rely on them."
           }
         },
         {
@@ -149,7 +149,7 @@
   <header class="site-header" id="site-header">
     <div class="container">
       <a href="/" class="logo">
-        <img src="logo.png" alt="" width="40" height="40" loading="eager">
+        <img src="logo.png" alt="" width="44" height="44" loading="eager">
         <span class="logo-text">Hiiclub Agency</span>
       </a>
       <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
@@ -202,7 +202,7 @@
           <li><a href="#requirements">Requirements</a></li>
           <li><a href="#apply">How to apply</a></li>
           <li><a href="#verification">Verification</a></li>
-          <li><a href="#earnings">Earnings &amp; payments</a></li>
+          <li><a href="#earnings">Call rates</a></li>
           <li><a href="#support">Support</a></li>
           <li><a href="#faq">FAQs</a></li>
         </ul>
@@ -287,6 +287,7 @@
           <ul class="benefits-list">
             <li>Complete verification only on the app&rsquo;s own screens, following its instructions exactly.</li>
             <li>Use your own identity, face and photos. Never borrow someone else&rsquo;s details or documents.</li>
+            <li>The supplied policy requires your whole face to be visible during the interview. Not showing your whole face during calls or live streams is listed as a rule violation.</li>
             <li>Do not try to bypass checks or create several accounts. That can get an account blocked.</li>
             <li>We never ask you to send identity documents, passwords or OTPs on WhatsApp.</li>
           </ul>
@@ -296,26 +297,24 @@
 
     <!-- EARNINGS -->
     <section id="earnings" class="section-light" aria-labelledby="earn-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Earnings &amp; Payments</span>
-          <h2 id="earn-heading">Hiiclub Host Earnings and Payments: What to Confirm</h2>
-          <p>Host earnings follow the app&rsquo;s current rules and depend on your activity. They are not a salary and are not guaranteed. Rates, minimum withdrawals, fees and payment dates are set by the app and can change, so check them in the app before you rely on them.</p>
+      <div class="container narrow">
+        <span class="section-tag">Earnings</span>
+        <h2 id="earn-heading">Hiiclub Host Call Rates and Beans</h2>
+        <p>The supplied Hiiclub policy lists these video-call rates by call duration. It states that 1,000 beans equal ₹1.</p>
+        <div class="table-wrap">
+          <table class="policy-table">
+            <caption>Hiiclub video-call rates by call duration (supplied policy)</caption>
+            <thead><tr><th scope="col">Call duration</th><th scope="col">Beans per minute</th><th scope="col">INR equivalent per minute</th></tr></thead>
+            <tbody>
+            <tr><th scope="row">More than 30 seconds, up to 120 seconds</th><td>8,700</td><td>₹8.70</td></tr>
+            <tr><th scope="row">More than 120 seconds, up to 300 seconds</th><td>9,200</td><td>₹9.20</td></tr>
+            <tr><th scope="row">More than 300 seconds, up to 600 seconds</th><td>9,500</td><td>₹9.50</td></tr>
+            <tr><th scope="row">More than 600 seconds</th><td>10,000</td><td>₹10.00</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="check-grid">
-          <div class="card">
-            <h3>How earnings are counted</h3>
-            <p>Which activity earns rewards or income, and how it shows in your account.</p>
-          </div>
-          <div class="card">
-            <h3>Withdrawals</h3>
-            <p>The minimum amount, the payout methods offered, and how long a withdrawal takes.</p>
-          </div>
-          <div class="card">
-            <h3>Fees and checks</h3>
-            <p>Any deductions, and the identity or bank checks required before your first payout.</p>
-          </div>
-        </div>
+        <p>The policy also describes gift earnings and task rewards, and higher-ranked hosts being able to change their call price. It does not promise a fixed monthly salary; earnings depend on qualifying activity and the applicable account rules.</p>
+        <p class="policy-note">These rupee figures are conversions, not guaranteed income or confirmed take-home pay. Check the rate and conditions shown in your account. The document does not explain billing when a call crosses between duration bands. The presentation explains withdrawals through agency accounts and does not confirm a host self-withdrawal option, so check your payment arrangement before joining. Source: the Hiiclub policy presentation supplied to this website. No effective date is shown.</p>
       </div>
     </section>
 
@@ -363,7 +362,7 @@
           </div>
           <div class="faq-item">
             <button type="button" class="faq-q" id="host-faq-q2" aria-expanded="false" aria-controls="host-faq-a2">Is there a fixed income or salary for hosts? <span class="faq-ico" aria-hidden="true">+</span></button>
-            <div class="faq-a" id="host-faq-a2" aria-labelledby="host-faq-q2"><p>We cannot promise any income. Host earnings follow the app&rsquo;s current rules and your activity on it, and they can change. Confirm the details inside the app before you rely on them.</p></div>
+            <div class="faq-a" id="host-faq-a2" aria-labelledby="host-faq-q2"><p>No fixed salary is promised. The supplied policy lists call rates, gift earnings and task rewards, and earnings depend on qualifying activity and the applicable account rules. Confirm the details inside the app before you rely on them.</p></div>
           </div>
           <div class="faq-item">
             <button type="button" class="faq-q" id="host-faq-q3" aria-expanded="false" aria-controls="host-faq-a3">Can I apply through WhatsApp? <span class="faq-ico" aria-hidden="true">+</span></button>
@@ -407,7 +406,7 @@
           <a href="/" aria-label="Hiiclub Agency home">
             <img src="logo.png" alt="Hiiclub Agency logo" width="36" height="36" loading="lazy" class="f-logo">
           </a>
-          <p>Independent support for Hiiclub agency and host registration.<br>WhatsApp: <a href="https://wa.me/919233262700" target="_blank" rel="noopener noreferrer" data-cta="whatsapp-footer">+91 9233262700</a></p>
+          <p>Independent guidance for Hiiclub agency and host applicants. Explore registration, earnings information and dashboard support.<br>WhatsApp: <a href="https://wa.me/919233262700" target="_blank" rel="noopener noreferrer" data-cta="whatsapp-footer">+91 9233262700</a></p>
         </div>
         <div class="footer-col">
           <h4>Registration</h4>
@@ -429,7 +428,8 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Hiiclub Agency. All Rights Reserved.</p>
-        <p class="disclaimer">Independent registration support. Not the official Hiiclub app website; app names belong to their owners.</p>
+        <p class="disclaimer">This website is not the Hiiclub app publisher. Hiiclub names and trademarks belong to their respective owners.</p>
+        <p class="disclaimer">Policy reference: the Hiiclub presentation supplied to this website. No effective date is shown. Confirm the terms applicable to your account before registration or withdrawal.</p>
       </div>
     </div>
   </footer>
@@ -465,6 +465,6 @@
     <a href="https://bestcallingapps.site" target="_blank" rel="noopener" class="popup-btn" data-cta="better-apps">💰 Click Here for More Apps</a>
   </aside>
 
-  <script src="script.js?v=20261029-5"></script>
+  <script src="script.js?v=20261029-6"></script>
 </body>
 </html>
