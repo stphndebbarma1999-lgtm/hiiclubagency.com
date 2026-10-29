@@ -1,0 +1,38 @@
+# hiiclubagency.com — Apache / LiteSpeed (Hostinger) rules
+#
+# IMPORTANT: the live server already has an .htaccess (HTTP -> HTTPS works today) that was
+# not exported into this repository. Download and back it up before uploading this file,
+# and copy across any rules it contains that are not covered below (e.g. hPanel/LiteSpeed
+# cache blocks). See docs/SEO-HANDOVER.md, "Deployment".
+
+Options -Indexes
+DirectoryIndex index.html
+
+# Real 404 status with a helpful page (do not redirect missing URLs to the homepage)
+ErrorDocument 404 /404.html
+
+# Repository-only files are never served, even if the whole repo is uploaded by mistake
+RedirectMatch 404 ^/(docs|\.git)(/|$)
+RedirectMatch 404 ^/README\.md$
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 1) /index.html -> https://hiiclubagency.com/ from any host or scheme, in one hop.
+#    Matches only when the browser asked for index.html, so the internal DirectoryIndex
+#    lookup for "/" never triggers a loop. Query string is kept.
+RewriteCond %{THE_REQUEST} \s/+index\.html[?\s] [NC]
+RewriteRule ^index\.html$ https://hiiclubagency.com/ [R=301,L]
+
+# 2) Any www request (HTTP or HTTPS) -> https://hiiclubagency.com, same path, one hop.
+#    The query string is kept automatically because the target has no "?".
+RewriteCond %{HTTP_HOST} ^www\.hiiclubagency\.com$ [NC]
+RewriteRule ^ https://hiiclubagency.com%{REQUEST_URI} [R=301,L,NE]
+
+# 3) HTTP -> HTTPS on the preferred host.
+#    The X-Forwarded-Proto check prevents a loop when a CDN/proxy terminates TLS.
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://hiiclubagency.com%{REQUEST_URI} [R=301,L,NE]
+
+</IfModule>
