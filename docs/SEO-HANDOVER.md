@@ -286,3 +286,14 @@ No performance scores are claimed.
 - **Hero image:** added `hero-760.webp` (57 KB) through `srcset`. `hero.png` is kept for the larger size and for social sharing. Not lazy-loaded.
 - **Inner pages:** same styling. Copy, URLs, referral parameters, requirements and schema are unchanged, apart from the removed emoji icons.
 - **Deploy:** upload the same file list as §8, **plus** `hero-760.webp` and the `fonts/` folder.
+
+## 12. Fono-style layout pass (29 Oct 2026, third pass)
+
+- **Reference not inspected.** fonoapp.in was blocked by this session's network policy (DNS failure). Fono's fonts, CSS values and screenshots were **not** inspected. The layout follows the brief's described hierarchy with conservative styling. **The visual match is unverified.** Manrope stays as a documented fallback, not a claimed match to Fono's font.
+- **Homepage:**
+  - eyebrow pill, two-line H1, tagline and description, two buttons and a login-help link, with the app image in a soft-pink panel to the right (stacked below 900px);
+  - then "What is Hiiclub?" with three chips, two option cards (`#agency-vs-host`), three numbered steps, the login card (`#agency-login`), 5 FAQs (schema matched) and a compact closing CTA card.
+  - New meta description; the title is unchanged.
+- **Inner pages:** new H1s and intros as specified (agency, host, guides, about, contact). All requirements, steps, FAQs, URLs and invite codes are unchanged. The agency hero note now links to login help.
+- **Footer intro:** "Independent support for Hiiclub agency and host registration."
+- **Theme colours:** CSS `:root` tokens (`--accent`, `--accent-soft`, `--text`, …) at the top of `style.css`.
