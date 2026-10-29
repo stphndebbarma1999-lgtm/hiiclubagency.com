@@ -31,10 +31,8 @@
   <meta name="msapplication-config" content="browserconfig.xml">
   <meta name="theme-color" content="#FF2D55">
 
-  <!-- Fonts + stylesheet -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap">
+  <!-- Font (self-hosted Manrope) + stylesheet -->
+  <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 
   <!-- Structured data -->
@@ -101,7 +99,7 @@
   <header class="site-header" id="site-header">
     <div class="container">
       <a href="/" class="logo" aria-label="Hiiclub Agency home">
-        <img src="logo.png" alt="Hiiclub Agency logo" width="42" height="42" loading="eager">
+        <img src="logo.png" alt="Hiiclub Agency logo" width="40" height="40" loading="eager">
       </a>
       <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
@@ -154,7 +152,6 @@
           </div>
           <div>
             <div class="card" style="margin-bottom:22px">
-              <span class="card-icon" aria-hidden="true">✅</span>
               <h3>What we do</h3>
               <ul class="benefits-list">
                 <li>Explain the difference between the agency and host routes</li>
@@ -165,7 +162,6 @@
               </ul>
             </div>
             <div class="card">
-              <span class="card-icon" aria-hidden="true">🚫</span>
               <h3>What we don&rsquo;t do</h3>
               <ul class="benefits-list no-list">
                 <li>Approve or reject applications, which only the platform can do</li>
@@ -188,17 +184,14 @@
         </div>
         <div class="why-grid">
           <div class="card">
-            <span class="card-icon" aria-hidden="true">💬</span>
             <h3>WhatsApp messages</h3>
             <p>Message <a class="text-link" href="https://wa.me/919233262700" target="_blank" rel="noopener noreferrer" data-cta="about-whatsapp">+91 9233262700</a>. We reply as soon as we can, but we do not offer 24/7 support or fixed response times.</p>
           </div>
           <div class="card">
-            <span class="card-icon" aria-hidden="true">🇮🇳</span>
             <h3>India, remote</h3>
             <p>We help applicants across India, entirely online. Support is in English.</p>
           </div>
           <div class="card">
-            <span class="card-icon" aria-hidden="true">🔐</span>
             <h3>Minimal information</h3>
             <p>We only ask for what your question needs. We never ask for passwords, OTPs or full identity documents.</p>
           </div>
@@ -241,9 +234,9 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/" aria-label="Hiiclub Agency home">
-            <img src="logo.png" alt="Hiiclub Agency logo" width="38" height="38" loading="lazy" class="f-logo">
+            <img src="logo.png" alt="Hiiclub Agency logo" width="36" height="36" loading="lazy" class="f-logo">
           </a>
-          <p>Independent support for Hiiclub agency and host registration in India. WhatsApp: <a href="https://wa.me/919233262700" target="_blank" rel="noopener noreferrer" data-cta="whatsapp-footer">+91 9233262700</a></p>
+          <p>Independent help with Hiiclub agency and host registration in India.<br>WhatsApp: <a href="https://wa.me/919233262700" target="_blank" rel="noopener noreferrer" data-cta="whatsapp-footer">+91 9233262700</a></p>
         </div>
         <div class="footer-col">
           <h4>Registration</h4>
@@ -265,7 +258,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Hiiclub Agency. All Rights Reserved.</p>
-        <p class="disclaimer">hiiclubagency.com is an independent registration support website. It is not the official website of the Hiiclub app or its developer, and it cannot approve applications or access app accounts. App names belong to their respective owners.</p>
+        <p class="disclaimer">Independent registration support. Not the official Hiiclub app website; app names belong to their owners.</p>
       </div>
     </div>
   </footer>

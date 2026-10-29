@@ -269,3 +269,20 @@ Suggested tags: `registration`, `login-oms`, `host`, `brand-app`.
 - Destination pages of the external links (network blocked).
 
 No performance scores are claimed.
+
+---
+
+## 11. Design refresh (29 Oct 2026, second pass)
+
+- **Homepage H1 changed** to one `<h1 class="hero-title">` containing two block spans: "Hiiclub Agency" / "Join as an Agency or Host". The title tag is unchanged.
+- **Homepage meta description:** "Explore Hiiclub agency registration, host applications and agency login guidance. Find clear steps and get WhatsApp support from our team."
+- **Homepage structure:** hero, then five compact sections — route (`#agency-vs-host`), steps, login help (`#agency-login`), and 5 FAQs (schema updated to match) — then the footer. The breadcrumb bar and the large closing CTA were removed from the homepage only. Visible `<main>` text is about 430 words.
+- **Font:** Manrope variable (Fontsource 5.3.0), self-hosted at `fonts/manrope-latin-wght-normal.woff2` (25 KB, latin subset, `font-display: swap`, preloaded). The licence is in `fonts/Manrope-OFL.txt`. Google Fonts (Nunito) has been removed.
+- **`style.css` rewritten:**
+  - one accent (#E0184A), a near-black text colour, a spacing scale, and a 1120px container;
+  - 48px buttons, subtle borders and shadows;
+  - no gradient text, blobs or glass effects;
+  - emoji icons removed from pages.
+- **Hero image:** added `hero-760.webp` (57 KB) through `srcset`. `hero.png` is kept for the larger size and for social sharing. Not lazy-loaded.
+- **Inner pages:** same styling. Copy, URLs, referral parameters, requirements and schema are unchanged, apart from the removed emoji icons.
+- **Deploy:** upload the same file list as §8, **plus** `hero-760.webp` and the `fonts/` folder.

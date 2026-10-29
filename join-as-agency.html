@@ -31,10 +31,8 @@
   <meta name="msapplication-config" content="browserconfig.xml">
   <meta name="theme-color" content="#FF2D55">
 
-  <!-- Fonts + stylesheet -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap">
+  <!-- Font (self-hosted Manrope) + stylesheet -->
+  <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 
   <!-- Structured data -->
@@ -151,7 +149,7 @@
   <header class="site-header" id="site-header">
     <div class="container">
       <a href="/" class="logo" aria-label="Hiiclub Agency home">
-        <img src="logo.png" alt="Hiiclub Agency logo" width="42" height="42" loading="eager">
+        <img src="logo.png" alt="Hiiclub Agency logo" width="40" height="40" loading="eager">
       </a>
       <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
@@ -254,22 +252,18 @@
         </div>
         <div class="check-grid">
           <div class="card">
-            <span class="card-icon" aria-hidden="true">🔞</span>
             <h3>Be 18 or over</h3>
             <p>We only assist adult applicants. The app&rsquo;s own terms may set further conditions; read them on the form.</p>
           </div>
           <div class="card">
-            <span class="card-icon" aria-hidden="true">📱</span>
             <h3>A mobile number you control</h3>
             <p>Use a number you will keep, because the platform may contact you on it. Add WhatsApp if you want our help.</p>
           </div>
           <div class="card">
-            <span class="card-icon" aria-hidden="true">🪪</span>
             <h3>Details that match your ID</h3>
             <p>Enter your real name and details. If the platform asks for verification, mismatches can delay or block your application.</p>
           </div>
           <div class="card">
-            <span class="card-icon" aria-hidden="true">🏦</span>
             <h3>Payout details, later</h3>
             <p>Add bank or payment details only when the app&rsquo;s own dashboard asks for them. Never send them in chat.</p>
           </div>
@@ -287,22 +281,18 @@
         </div>
         <div class="steps-grid">
           <div class="step-card">
-            <span class="step-icon" aria-hidden="true">🔗</span>
             <h3>1. Open the form</h3>
             <p>Tap &ldquo;Open agency application&rdquo;. The form opens on oms.hiiclub.live in a new tab. Check the address before you type anything.</p>
           </div>
           <div class="step-card">
-            <span class="step-icon" aria-hidden="true">✍️</span>
             <h3>2. Fill it in yourself</h3>
             <p>Enter accurate details in every required field. This website does not see or store anything you submit.</p>
           </div>
           <div class="step-card">
-            <span class="step-icon" aria-hidden="true">📸</span>
             <h3>3. Save your confirmation</h3>
             <p>After you submit, screenshot any confirmation, agency name or ID that appears. You will need it if you ask for help later.</p>
           </div>
           <div class="step-card">
-            <span class="step-icon" aria-hidden="true">💬</span>
             <h3>4. Ask if anything is unclear</h3>
             <p>Message us on WhatsApp at any stage. WhatsApp is for help only; it is not a second way to apply.</p>
           </div>
@@ -339,22 +329,18 @@
         </div>
         <div class="steps-grid">
           <div class="step-card">
-            <span class="step-icon" aria-hidden="true">🔞</span>
             <h3>Confirm they are adults</h3>
             <p>Only onboard people aged 18 or over who can pass the app&rsquo;s own checks.</p>
           </div>
           <div class="step-card">
-            <span class="step-icon" aria-hidden="true">📖</span>
             <h3>Share the host guide</h3>
             <p>Send recruits the <a class="text-link" href="join-as-host.html">host registration guide</a> so they know the requirements before they apply.</p>
           </div>
           <div class="step-card">
-            <span class="step-icon" aria-hidden="true">🤝</span>
             <h3>Explain earnings honestly</h3>
             <p>Tell hosts that earnings follow the app&rsquo;s rules and are not guaranteed. Point them to the policy instead of quoting numbers.</p>
           </div>
           <div class="step-card">
-            <span class="step-icon" aria-hidden="true">✅</span>
             <h3>Check they appear in your account</h3>
             <p>After a host is approved, confirm they show in your agency account. Raise any mismatch with platform support quickly.</p>
           </div>
@@ -409,13 +395,11 @@
         </div>
         <div class="grid-2">
           <div class="card">
-            <span class="card-icon" aria-hidden="true">🆕</span>
             <h3>I don&rsquo;t have an agency yet</h3>
             <p>Use the agency application form. It opens on oms.hiiclub.live.</p>
             <a href="https://oms.hiiclub.live/h5/agency-register?parent_invite_code=w0RUL8" class="text-link" target="_blank" rel="noopener noreferrer" data-cta="agency-apply-external">Open agency application</a>
           </div>
           <div class="card">
-            <span class="card-icon" aria-hidden="true">🔑</span>
             <h3>I already have an agency</h3>
             <p>Do not apply again. Sign in through the route you were given when you were approved.</p>
             <a href="/#agency-login" class="text-link" data-cta="agency-login-help">Agency login help</a>
@@ -480,9 +464,9 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/" aria-label="Hiiclub Agency home">
-            <img src="logo.png" alt="Hiiclub Agency logo" width="38" height="38" loading="lazy" class="f-logo">
+            <img src="logo.png" alt="Hiiclub Agency logo" width="36" height="36" loading="lazy" class="f-logo">
           </a>
-          <p>Independent support for Hiiclub agency and host registration in India. WhatsApp: <a href="https://wa.me/919233262700" target="_blank" rel="noopener noreferrer" data-cta="whatsapp-footer">+91 9233262700</a></p>
+          <p>Independent help with Hiiclub agency and host registration in India.<br>WhatsApp: <a href="https://wa.me/919233262700" target="_blank" rel="noopener noreferrer" data-cta="whatsapp-footer">+91 9233262700</a></p>
         </div>
         <div class="footer-col">
           <h4>Registration</h4>
@@ -504,7 +488,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Hiiclub Agency. All Rights Reserved.</p>
-        <p class="disclaimer">hiiclubagency.com is an independent registration support website. It is not the official website of the Hiiclub app or its developer, and it cannot approve applications or access app accounts. App names belong to their respective owners.</p>
+        <p class="disclaimer">Independent registration support. Not the official Hiiclub app website; app names belong to their owners.</p>
       </div>
     </div>
   </footer>
