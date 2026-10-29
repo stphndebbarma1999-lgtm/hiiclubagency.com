@@ -135,7 +135,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   background: rgba(255, 255, 255, .97); border-bottom: 1px solid var(--border);
 }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.logo { display: inline-flex; align-items: center; gap: 10px; }
 .logo img { height: 40px; width: 40px; }
+.logo-text { font-size: 1.125rem; font-weight: 800; letter-spacing: -.02em; color: var(--text); white-space: nowrap; }
 .nav-menu ul { display: flex; align-items: center; gap: 2px; }
 .nav-menu a {
   display: block; padding: 8px 12px; border-radius: 8px;
