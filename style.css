@@ -777,3 +777,32 @@ main > section:not(:last-of-type) { padding-bottom: calc(var(--s9) + 96px); }
   main > section + section::before { top: -94px; height: 96px; }
   main > section:not(:last-of-type) { padding-bottom: calc(var(--s8) + 40px); }
 }
+
+/* ---- Mixed dividers: curve, straight, wave, straight (all solid, no fade) ---- */
+main > section:not(:last-of-type) { padding-bottom: calc(var(--s9) + 40px); }
+main > section + section::before {
+  background: inherit; transform: none; z-index: 1;
+  -webkit-mask: var(--div) no-repeat center bottom / 100% 100%;
+          mask: var(--div) no-repeat center bottom / 100% 100%;
+  animation: none; top: -78px; height: 80px;
+}
+/* 1) single smooth curve */
+main > section + section:nth-of-type(4n+2)::before {
+  --div: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80 V62 C420 82 900 66 1440 8 V80Z' fill='%23000'/%3E%3C/svg%3E");
+}
+main > section + section:nth-of-type(8n+6)::before { transform: scaleX(-1); }
+/* 2) straight: no divider */
+main > section + section:nth-of-type(odd)::before { content: none; }
+/* 3) wave */
+main > section + section:nth-of-type(4n)::before {
+  --div: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 32 C50 4 50 4 100 32 S150 60 200 32 S250 4 300 32 S350 60 400 32 V60 H0Z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+  -webkit-mask-size: 400px 100%; mask-size: 400px 100%;
+  top: -38px; height: 40px; animation: waveDrift400 12s linear infinite;
+}
+@media (max-width: 768px) {
+  main > section:not(:last-of-type) { padding-bottom: calc(var(--s8) + 20px); }
+  main > section + section::before { top: -46px; height: 48px; }
+  main > section + section:nth-of-type(4n)::before { top: -26px; height: 28px; -webkit-mask-size: 240px 100%; mask-size: 240px 100%; animation-name: waveDrift240; }
+}
+@media (prefers-reduced-motion: reduce) { main > section + section:nth-of-type(4n)::before { animation: none; } }
