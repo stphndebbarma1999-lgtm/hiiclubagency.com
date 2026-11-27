@@ -835,3 +835,10 @@ main > section + section:nth-of-type(4n+2)::before {
 @media (max-width: 768px) {
   main > section + section:nth-of-type(4n+2)::before { top: -62px; height: 64px; }
 }
+
+/* Slightly bolder text throughout */
+body { font-weight: 500; }
+p, li, td, .tut-cap, .ext-note, .policy-note, .faq-a { font-weight: 500; }
+.breadcrumb, .nav-menu a, .toc a, .tut-start-next { font-weight: 600; }
+strong, b { font-weight: 700; }
+h1, h2, h3, h4 { font-weight: 800; }
