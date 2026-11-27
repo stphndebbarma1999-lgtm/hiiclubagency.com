@@ -164,4 +164,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ---- Tutorial photo viewer ---- */
+  var viewer = document.getElementById('tut-viewer');
+  if (viewer && typeof viewer.showModal === 'function') {
+    var vImg = viewer.querySelector('img');
+    var vClose = viewer.querySelector('.tut-viewer-close');
+    var lastBtn = null;
+    document.querySelectorAll('.tut-zoom').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        lastBtn = btn;
+        vImg.src = btn.getAttribute('data-full');
+        vImg.alt = btn.getAttribute('data-alt') || '';
+        viewer.classList.remove('zoomed');
+        document.body.classList.add('tut-lock');
+        viewer.showModal();
+        vClose.focus();
+      });
+    });
+    vClose.addEventListener('click', function () { viewer.close(); });
+    vImg.addEventListener('click', function () { viewer.classList.toggle('zoomed'); });
+    viewer.addEventListener('click', function (e) {
+      if (e.target === viewer || e.target.classList.contains('tut-viewer-stage')) viewer.close();
+    });
+    viewer.addEventListener('close', function () {
+      document.body.classList.remove('tut-lock');
+      vImg.removeAttribute('src');
+      if (lastBtn) lastBtn.focus();
+    });
+  }
+
 });

@@ -489,32 +489,65 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 }
 @media (max-width: 380px) { .logo-text { font-size: 1.2rem; } }
 
-/* ---- Photo step-by-step guides ---- */
-.photo-steps { display: grid; gap: var(--s6); max-width: 880px; margin: 0 auto; counter-reset: none; }
-.photo-step {
-  display: grid; grid-template-columns: 220px 1fr; gap: var(--s6); align-items: center;
-  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: var(--s5); box-shadow: var(--shadow);
+/* ---- Photo step-by-step guides (two columns at every width) ---- */
+.tut-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 2.6vw, 20px); max-width: 780px; margin: 0 auto;
 }
-.photo-step-img { margin: 0; position: relative; }
-.photo-step-img img {
-  display: block; width: 100%; height: auto; aspect-ratio: 9 / 19.5; object-fit: cover;
-  border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-2);
+.tut-card {
+  display: flex; flex-direction: column; min-width: 0;
+  background: var(--bg); border: 1px solid #FFD6DF; border-radius: var(--radius);
+  padding: clamp(8px, 2vw, 14px);
+  box-shadow: 0 0 0 1px rgba(224, 24, 74, .04), 0 6px 22px rgba(224, 24, 74, .12);
 }
-.photo-step-img.is-missing::before {
-  content: 'Photo coming soon'; display: flex; align-items: center; justify-content: center;
-  aspect-ratio: 9 / 19.5; border: 2px dashed var(--border); border-radius: var(--radius-sm);
-  background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .9375rem;
+.tut-title {
+  display: flex; align-items: flex-start; gap: 8px; margin-bottom: clamp(8px, 2vw, 12px);
+  font-size: clamp(.875rem, 3.4vw, 1.0625rem); line-height: 1.3; overflow-wrap: anywhere;
 }
-.photo-step-img figcaption { margin-top: 8px; text-align: center; font-size: .8125rem; color: var(--text-2, #5A5A66); font-weight: 600; }
-.photo-step-num {
-  display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px;
-  border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; margin-bottom: var(--s3);
+.tut-num {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  width: clamp(24px, 6.4vw, 30px); height: clamp(24px, 6.4vw, 30px); border-radius: 50%;
+  background: var(--accent); color: #fff; font-weight: 700; font-size: clamp(.75rem, 3vw, .875rem);
 }
-.photo-step-body h3 { font-size: 1.1875rem; margin-bottom: 8px; }
-.photo-step-body p { font-size: 1rem; }
-@media (max-width: 640px) {
-  .photo-step { grid-template-columns: 1fr; text-align: center; padding: var(--s4); gap: var(--s4); }
-  .photo-step-img { max-width: 240px; margin: 0 auto; }
-  .photo-step-body { order: -1; }
+.tut-title-text { padding-top: clamp(2px, .6vw, 4px); }
+.tut-zoom {
+  display: flex; align-items: center; justify-content: center; margin-top: auto;
+  width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: var(--radius-sm);
 }
+.tut-zoom:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.tut-zoom img {
+  display: block; width: 100%; height: auto; max-height: 68svh; object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+.tut-note { text-align: center; max-width: 680px; margin: 28px auto 0; }
+
+/* Viewer */
+body.tut-lock { overflow: hidden; }
+.tut-viewer {
+  width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0;
+  border: 0; background: rgba(12, 12, 16, .94);
+}
+.tut-viewer::backdrop { background: rgba(12, 12, 16, .94); }
+.tut-viewer-stage {
+  width: 100%; height: 100%; overflow: auto; display: flex; align-items: center; justify-content: center;
+  padding: 56px 12px 16px; -webkit-overflow-scrolling: touch;
+}
+.tut-viewer-stage img {
+  display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;
+  border-radius: 8px; cursor: zoom-in;
+}
+.tut-viewer.zoomed .tut-viewer-stage { align-items: flex-start; justify-content: flex-start; }
+.tut-viewer.zoomed .tut-viewer-stage img { max-width: none; max-height: none; width: min(1400px, 220vw); cursor: zoom-out; margin: 0 auto; }
+.tut-viewer-close {
+  position: fixed; top: 10px; right: 12px; z-index: 2; width: 44px; height: 44px; border-radius: 50%;
+  border: 0; background: #fff; color: #121216; font-size: 28px; line-height: 1; cursor: pointer;
+}
+.tut-viewer-close:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Homepage guide links */
+.guide-link { display: flex; gap: var(--s4); align-items: center; padding: var(--s4); color: inherit; transition: border-color var(--trans), transform var(--trans); }
+.guide-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+.guide-link img { flex: none; width: 72px; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+.guide-link h3 { font-size: 1.0625rem; margin-bottom: 4px; color: var(--text); }
+.guide-link p { font-size: .9375rem; }
+@media (prefers-reduced-motion: reduce) { .guide-link, .guide-link:hover { transition: none; transform: none; } }
