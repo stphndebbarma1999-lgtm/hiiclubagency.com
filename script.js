@@ -193,4 +193,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ---- Floating logo watermarks ---- */
+  if (!document.querySelector('.bg-logos')) {
+    var bg = document.createElement('div');
+    bg.className = 'bg-logos'; bg.setAttribute('aria-hidden', 'true');
+    for (var n = 0; n < 3; n++) {
+      var li = document.createElement('img');
+      li.src = '/logo-mark.webp'; li.alt = ''; li.width = 150; li.height = 150; li.decoding = 'async';
+      bg.appendChild(li);
+    }
+    document.body.appendChild(bg);
+  }
+
+  /* ---- Touch glow on cards ---- */
+  var glowSel = '.card, .step-card, .tut-card, .blog-card, .tut-start, .tut-quick a';
+  document.addEventListener('pointerdown', function (e) {
+    var el = e.target.closest && e.target.closest(glowSel);
+    if (!el) return;
+    el.classList.add('is-glow');
+    clearTimeout(el._glowT);
+    el._glowT = setTimeout(function () { el.classList.remove('is-glow'); }, 900);
+  }, { passive: true });
+
 });

@@ -573,3 +573,90 @@ body.tut-lock { overflow: hidden; }
 }
 .tut-quick a strong { color: var(--accent); }
 .tut-quick a:hover { border-color: var(--accent); }
+
+/* ================================================================
+   Hiiclub theme layer: tinted sections, animated curvy dividers,
+   glow cards, gentle photo motion, floating logo watermarks
+================================================================ */
+:root {
+  --sec-a: #FFFFFF;
+  --sec-b: #FFE6EE;   /* blush pink */
+  --sec-c: #FFF0E6;   /* warm coral */
+  --glow: 0 0 0 1px rgba(232, 17, 79, .10), 0 8px 26px rgba(232, 17, 79, .16);
+  --glow-strong: 0 0 0 2px rgba(232, 17, 79, .35), 0 0 28px rgba(255, 64, 110, .45), 0 10px 34px rgba(232, 17, 79, .25);
+}
+
+/* Three rotating section backgrounds */
+main > section { position: relative; border-top: 0; border-bottom: 0; }
+main > section:nth-of-type(3n+1) { background: var(--sec-a); }
+main > section:nth-of-type(3n+2) { background: var(--sec-b); }
+main > section:nth-of-type(3n)   { background: var(--sec-c); }
+main > section:first-of-type { background: linear-gradient(180deg, #FFFFFF 0%, #FFF3F6 100%); }
+main > section > .container { position: relative; z-index: 2; }
+
+/* Curvy divider: a wave in the section's own colour that overlaps the section above */
+main > section + section::before,
+main > section + section::after {
+  content: ''; position: absolute; left: 0; right: 0; pointer-events: none;
+  background: inherit;
+  -webkit-mask: var(--wave) repeat-x 0 100% / 1200px 100%;
+          mask: var(--wave) repeat-x 0 100% / 1200px 100%;
+}
+main > section + section::before {
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0 36 C150 6 300 6 450 30 S750 58 900 30 S1100 8 1200 36 V60 H0Z' fill='%23000'/%3E%3C/svg%3E");
+  top: -44px; height: 46px; z-index: 1;
+  animation: waveDrift 22s linear infinite;
+}
+/* Second, low-faded wave drifting the other way */
+main > section + section::after {
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0 26 C200 54 400 54 600 28 S1000 2 1200 26 V60 H0Z' fill='%23000'/%3E%3C/svg%3E");
+  top: -62px; height: 64px; z-index: 0; opacity: .45;
+  animation: waveDrift 34s linear infinite reverse;
+}
+@keyframes waveDrift { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: -1200px 100%; mask-position: -1200px 100%; } }
+@media (max-width: 768px) {
+  main > section + section::before { top: -28px; height: 30px; }
+  main > section + section::after  { top: -40px; height: 42px; }
+  main > section + section::before, main > section + section::after { -webkit-mask-size: 700px 100%; mask-size: 700px 100%; }
+  @keyframes waveDrift { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: -700px 100%; mask-position: -700px 100%; } }
+}
+.toc { position: relative; z-index: 2; }
+
+/* Glow cards */
+.card, .step-card, .tut-card, .blog-card, .faq-item, .tut-start, .tut-quick a {
+  transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+}
+.card, .step-card, .blog-card { box-shadow: var(--glow); border-color: #FFDCE4; }
+.card:hover, .step-card:hover, .tut-card:hover, .blog-card:hover, .tut-start:hover, .tut-quick a:hover,
+.card.is-glow, .step-card.is-glow, .tut-card.is-glow, .blog-card.is-glow, .tut-start.is-glow, .tut-quick a.is-glow,
+.card:focus-within, .step-card:focus-within, .tut-card:focus-within {
+  box-shadow: var(--glow-strong); border-color: #FF8AA8; transform: translateY(-3px);
+}
+
+/* Gentle motion on photos */
+@keyframes photoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+.tut-zoom img, .hero-img-wrap img { animation: photoFloat 5.5s ease-in-out infinite; will-change: transform; }
+.tut-card:nth-child(4n+2) .tut-zoom img { animation-delay: -1.4s; }
+.tut-card:nth-child(4n+3) .tut-zoom img { animation-delay: -2.8s; }
+.tut-card:nth-child(4n)   .tut-zoom img { animation-delay: -4.2s; }
+
+/* Floating logo watermarks: 3 per screen, same size */
+.bg-logos { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.bg-logos img {
+  position: absolute; width: clamp(88px, 22vw, 150px); height: auto; opacity: .07;
+  animation: logoFloat 14s ease-in-out infinite;
+}
+.bg-logos img:nth-child(1) { top: 16%; left: 4%; }
+.bg-logos img:nth-child(2) { top: 44%; right: 5%; animation-delay: -4.5s; animation-duration: 16s; }
+.bg-logos img:nth-child(3) { top: 74%; left: 18%; animation-delay: -9s; animation-duration: 18s; }
+@keyframes logoFloat {
+  0%, 100% { transform: translate(0, 0) rotate(-6deg); }
+  33% { transform: translate(14px, -18px) rotate(4deg); }
+  66% { transform: translate(-10px, 12px) rotate(-2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > section + section::before, main > section + section::after,
+  .tut-zoom img, .hero-img-wrap img, .bg-logos img { animation: none; }
+  .card:hover, .step-card:hover, .tut-card:hover, .blog-card:hover, .card.is-glow, .step-card.is-glow, .tut-card.is-glow, .blog-card.is-glow { transform: none; }
+}
