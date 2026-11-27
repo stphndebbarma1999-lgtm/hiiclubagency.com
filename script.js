@@ -206,13 +206,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---- Touch glow on cards ---- */
-  var glowSel = '.card, .step-card, .tut-card, .blog-card, .tut-start, .tut-quick a';
+  var glowSel = '.card, .step-card, .tut-card, .blog-card, .option-card, .num-steps li, .tut-start, .tut-quick a';
+  var pressed = null;
+  function release() {
+    if (!pressed) return;
+    var el = pressed; pressed = null;
+    el.classList.remove('is-press');
+    clearTimeout(el._glowT);
+    el._glowT = setTimeout(function () { el.classList.remove('is-glow'); }, 900);
+  }
   document.addEventListener('pointerdown', function (e) {
     var el = e.target.closest && e.target.closest(glowSel);
     if (!el) return;
-    el.classList.add('is-glow');
+    pressed = el;
     clearTimeout(el._glowT);
-    el._glowT = setTimeout(function () { el.classList.remove('is-glow'); }, 900);
+    el.classList.add('is-glow', 'is-press');
   }, { passive: true });
+  ['pointerup', 'pointercancel', 'dragstart'].forEach(function (t) { document.addEventListener(t, release, { passive: true }); });
+  document.addEventListener('scroll', release, { passive: true });
 
 });

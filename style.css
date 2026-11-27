@@ -588,10 +588,11 @@ body.tut-lock { overflow: hidden; }
 
 /* Three rotating section backgrounds */
 main > section { position: relative; border-top: 0; border-bottom: 0; }
-main > section:nth-of-type(3n+1) { background: var(--sec-a); }
-main > section:nth-of-type(3n+2) { background: var(--sec-b); }
+main > section:nth-of-type(3n+1) { background: var(--sec-b); }
+main > section:nth-of-type(3n+2) { background: var(--sec-a); }
 main > section:nth-of-type(3n)   { background: var(--sec-c); }
-main > section:first-of-type { background: linear-gradient(180deg, #FFFFFF 0%, #FFF3F6 100%); }
+/* Hero: Hiiclub logo colours (coral to pink) */
+main > section:first-of-type { background: #E8254F linear-gradient(135deg, #F2553F 0%, #E8254F 55%, #D4155E 100%); }
 main > section > .container { position: relative; z-index: 2; }
 
 /* Curvy divider: a wave in the section's own colour that overlaps the section above */
@@ -662,25 +663,25 @@ main > section + section::after {
 }
 
 /* ---- Full-colour sections: white text, inverted buttons/links ---- */
-main > section:nth-of-type(3n+2):not(:first-of-type),
+main > section:nth-of-type(3n+1),
 main > section:nth-of-type(3n) {
   --text: #FFFFFF; --text-2: rgba(255,255,255,.92); --text-3: rgba(255,255,255,.8);
   --accent: #FFFFFF; --accent-hover: #FFE3EA; --border: rgba(255,255,255,.28); --bg-2: rgba(255,255,255,.12);
   color: var(--text-2);
 }
-main > section:nth-of-type(3n+2):not(:first-of-type) { --on-color: #E0184A; }
+main > section:nth-of-type(3n+1) { --on-color: #E0184A; }
 main > section:nth-of-type(3n) { --on-color: #6E0D33; }
-main > section:nth-of-type(3n+2):not(:first-of-type) .section-tag,
+main > section:nth-of-type(3n+1) .section-tag,
 main > section:nth-of-type(3n) .section-tag { color: #FFD3DE; }
-main > section:nth-of-type(3n+2):not(:first-of-type) .btn-primary,
+main > section:nth-of-type(3n+1) .btn-primary,
 main > section:nth-of-type(3n) .btn-primary { background: #FFFFFF; color: var(--on-color); }
-main > section:nth-of-type(3n+2):not(:first-of-type) .btn-primary:hover,
+main > section:nth-of-type(3n+1) .btn-primary:hover,
 main > section:nth-of-type(3n) .btn-primary:hover { background: #FFE3EA; }
-main > section:nth-of-type(3n+2):not(:first-of-type) .btn-secondary,
+main > section:nth-of-type(3n+1) .btn-secondary,
 main > section:nth-of-type(3n) .btn-secondary { background: transparent; color: #FFFFFF; border-color: rgba(255,255,255,.85); }
-main > section:nth-of-type(3n+2):not(:first-of-type) .btn-secondary:hover,
+main > section:nth-of-type(3n+1) .btn-secondary:hover,
 main > section:nth-of-type(3n) .btn-secondary:hover { background: rgba(255,255,255,.14); }
-main > section:nth-of-type(3n+2):not(:first-of-type) .faq-item,
+main > section:nth-of-type(3n+1) .faq-item,
 main > section:nth-of-type(3n) .faq-item { border-color: rgba(255,255,255,.28); }
 
 /* Light boxes inside coloured sections keep the normal dark-on-white palette */
@@ -697,3 +698,32 @@ main > section :is(.card, .step-card, .tut-card, .blog-card, .option-card, .logi
   background: #FFFFFF; color: #E0184A; border-color: #E0184A;
 }
 .notice { background: #FFF6F8; }
+
+/* Hero on logo colours */
+main > section:first-of-type { --on-color: #E0184A; }
+main > section:first-of-type :is(h1, h2, .hero-title__brand, .hero-tagline) { text-shadow: 0 1px 2px rgba(120, 10, 40, .25); }
+main > section:first-of-type .hero-title__message { color: #FFE3EA; }
+main > section:first-of-type .eyebrow { color: #FFE3EA; }
+main > section:first-of-type .hero-img-wrap { box-shadow: 0 18px 44px rgba(90, 0, 30, .35); }
+/* Fixed (non-moving) curvy divider under the hero */
+main > section:first-of-type + section::before,
+main > section:first-of-type + section::after { animation: none; }
+
+/* Button-like press effect on cards */
+.card, .step-card, .tut-card, .blog-card, .option-card, .num-steps li, .tut-start, .tut-quick a { -webkit-tap-highlight-color: transparent; }
+:is(.card, .step-card, .tut-card, .blog-card, .option-card, .num-steps li, .tut-start, .tut-quick a).is-press {
+  transform: scale(.965) !important; transition-duration: .12s;
+  box-shadow: 0 0 0 3px rgba(232, 17, 79, .45), 0 0 34px rgba(255, 64, 110, .6), 0 4px 14px rgba(232, 17, 79, .3) !important;
+}
+:is(.option-card, .num-steps li).is-glow, .option-card:hover, .num-steps li:hover {
+  box-shadow: var(--glow-strong); border-color: #FF8AA8; transform: translateY(-3px);
+}
+
+/* "Click here" pill in homepage tutorial links */
+.tut-quick a { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.tut-click {
+  display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 999px;
+  background: #E0184A; color: #fff; font-weight: 700; font-size: .875rem; white-space: nowrap;
+}
+.tut-quick a:hover .tut-click { background: #C2123E; }
+@media (prefers-reduced-motion: reduce) { :is(.card, .step-card, .tut-card, .blog-card, .option-card, .num-steps li, .tut-start, .tut-quick a).is-press { transform: none !important; } }
