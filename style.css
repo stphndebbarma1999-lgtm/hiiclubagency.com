@@ -842,3 +842,22 @@ p, li, td, .tut-cap, .ext-note, .policy-note, .faq-a { font-weight: 500; }
 .breadcrumb, .nav-menu a, .toc a, .tut-start-next { font-weight: 600; }
 strong, b { font-weight: 700; }
 h1, h2, h3, h4 { font-weight: 800; }
+
+/* ================================================================
+   Wave divider (same build as chametapps.com, Hiiclub colours)
+   Replaces all pseudo-element dividers.
+================================================================ */
+main > section::before, main > section::after { content: none !important; }
+main > section:not(:last-of-type) { padding-bottom: var(--s9); }
+@media (max-width: 768px) { main > section:not(:last-of-type) { padding-bottom: var(--s8); } }
+.wave-divider { pointer-events: none; height: 56px; position: relative; overflow: hidden; z-index: 1; }
+@media (min-width: 768px) { .wave-divider { height: 80px; } }
+.wave-divider svg { width: 200%; height: 100%; position: absolute; bottom: 0; left: 0; display: block; }
+.wave-a { animation: 18s linear infinite wave-drift; }
+.wave-b { animation: 26s linear infinite reverse wave-drift, 7s ease-in-out infinite alternate wave-bob; }
+@keyframes wave-drift { 0% { transform: translate(0); } to { transform: translate(-50%); } }
+@keyframes wave-bob { 0% { translate: 0; } to { translate: 0 6px; } }
+@media (prefers-reduced-motion: reduce) { .wave-a, .wave-b { animation: none; } }
+/* hide sub-pixel seam under the wave */
+.wave-divider { margin-bottom: -1px; }
+.wave-divider svg { bottom: -1px; height: calc(100% + 1px); }
