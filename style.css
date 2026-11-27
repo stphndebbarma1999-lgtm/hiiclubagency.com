@@ -806,3 +806,14 @@ main > section + section:nth-of-type(4n)::before {
   main > section + section:nth-of-type(4n)::before { top: -26px; height: 28px; -webkit-mask-size: 240px 100%; mask-size: 240px 100%; animation-name: waveDrift240; }
 }
 @media (prefers-reduced-motion: reduce) { main > section + section:nth-of-type(4n)::before { animation: none; } }
+/* Softer, slower wave */
+main > section + section:nth-of-type(4n)::before {
+  --div: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 40' preserveAspectRatio='none'%3E%3Cpath d='M0 22 C200 10 200 10 400 22 S600 34 800 22 V40 H0Z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: 800px 100%; mask-size: 800px 100%;
+  top: -24px; height: 26px; animation: waveDrift800 40s linear infinite;
+}
+@keyframes waveDrift800 { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: -800px 100%; mask-position: -800px 100%; } }
+@media (max-width: 768px) {
+  main > section + section:nth-of-type(4n)::before { top: -16px; height: 18px; -webkit-mask-size: 520px 100%; mask-size: 520px 100%; animation: waveDrift520 40s linear infinite; }
+}
+@media (prefers-reduced-motion: reduce) { main > section + section:nth-of-type(4n)::before { animation: none; } }
