@@ -1,39 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://hiiclubagency.com/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-27</lastmod>
+    <image:image><image:loc>https://hiiclubagency.com/hero-1190.webp</image:loc></image:image>
   </url>
-
   <url>
     <loc>https://hiiclubagency.com/join-as-agency.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-27</lastmod>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/01-download-hiiclub.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/02-sign-in-with-google.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/03-choose-an-account.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/04-add-your-details.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/05-find-your-uid.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/06-enter-your-uid.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/07-create-login-details.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/08-add-agency-details.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/09-request-a-code.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/10-verify-and-bind.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/11-open-agency-login.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-creation/12-invite-hosts-and-sub-agents.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-withdrawal/01-open-hiiclub.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-withdrawal/02-tap-me.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-withdrawal/03-tap-exchange.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-withdrawal/04-confirm-exchange.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-withdrawal/05-tap-my-earning.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-withdrawal/06-tap-cash-out.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-withdrawal/07-enter-account-details.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/agency-withdrawal/08-enter-amount-and-cash-out.webp</image:loc></image:image>
   </url>
-
   <url>
     <loc>https://hiiclubagency.com/join-as-host.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-27</lastmod>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/01-open-the-invitation-link.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/02-download-the-app.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/03-install-hiiclub.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/04-open-hiiclub.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/05-sign-in-with-google.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/06-choose-your-account.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/07-review-permissions.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/08-allow-camera-access.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/09-enter-your-details.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/10-add-your-profile-photo.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/11-add-album-photos.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/12-add-an-introduction-video.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/13-write-your-bio.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/14-complete-the-interview.webp</image:loc></image:image>
+    <image:image><image:loc>https://hiiclubagency.com/tutorials/hiiclub/host-registration/15-wait-for-review.webp</image:loc></image:image>
   </url>
-
   <url>
     <loc>https://hiiclubagency.com/blog.html</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
-
   <url>
     <loc>https://hiiclubagency.com/safe-hiiclub-registration.html</loc>
     <lastmod>2026-10-29</lastmod>
   </url>
-
   <url>
     <loc>https://hiiclubagency.com/about-us.html</loc>
     <lastmod>2026-10-29</lastmod>
   </url>
-
   <url>
     <loc>https://hiiclubagency.com/contact-us.html</loc>
     <lastmod>2026-10-29</lastmod>
   </url>
-
 </urlset>

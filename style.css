@@ -317,7 +317,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .footer-brand .f-logo { width: 36px; height: 36px; margin-bottom: var(--s3); }
 .footer-brand p { font-size: .9375rem; max-width: 320px; }
 .footer-brand a:not(:first-child) { color: var(--text); font-weight: 600; }
-.footer-col h4 { font-size: .875rem; margin-bottom: var(--s3); }
+.footer-col h4, .footer-col .footer-heading { font-size: .875rem; margin-bottom: var(--s3); }
 .footer-col li { margin-bottom: var(--s2); }
 .footer-col a { font-size: .9375rem; color: var(--text-2); }
 .footer-col a:hover { color: var(--accent); }
