@@ -685,16 +685,16 @@ main > section:nth-of-type(3n+1) .faq-item,
 main > section:nth-of-type(3n) .faq-item { border-color: rgba(255,255,255,.28); }
 
 /* Light boxes inside coloured sections keep the normal dark-on-white palette */
-main > section :is(.card, .step-card, .tut-card, .blog-card, .option-card, .num-steps li, .chips li,
+main > section:nth-of-type(n) :is(.card, .step-card, .tut-card, .blog-card, .option-card, .num-steps li, .chips li,
   .login-card, .cta-card, .notice, .contact-card, .table-wrap, .tut-start, .tut-quick a, .hero-visual) {
   --text: #121216; --text-2: #4B4B57; --text-3: #6B6B78; --accent: #E0184A; --accent-hover: #C2123E;
   --border: #E8E8EE; --bg-2: #F8F8FA; --on-color: #E0184A;
   color: var(--text-2);
 }
-main > section :is(.card, .step-card, .tut-card, .blog-card, .option-card, .login-card, .cta-card, .contact-card, .tut-start) .btn-primary {
+main > section:nth-of-type(n) :is(.card, .step-card, .tut-card, .blog-card, .option-card, .login-card, .cta-card, .contact-card, .tut-start) .btn-primary {
   background: #E0184A; color: #FFFFFF;
 }
-main > section :is(.card, .step-card, .tut-card, .blog-card, .option-card, .login-card, .cta-card, .contact-card, .tut-start) .btn-secondary {
+main > section:nth-of-type(n) :is(.card, .step-card, .tut-card, .blog-card, .option-card, .login-card, .cta-card, .contact-card, .tut-start) .btn-secondary {
   background: #FFFFFF; color: #E0184A; border-color: #E0184A;
 }
 .notice { background: #FFF6F8; }
@@ -727,3 +727,30 @@ main > section:first-of-type + section::after { animation: none; }
 }
 .tut-quick a:hover .tut-click { background: #C2123E; }
 @media (prefers-reduced-motion: reduce) { :is(.card, .step-card, .tut-card, .blog-card, .option-card, .num-steps li, .tut-start, .tut-quick a).is-press { transform: none !important; } }
+main > section:nth-of-type(n) :is(.card, .step-card, .tut-card, .blog-card, .option-card, .login-card, .cta-card, .contact-card, .tut-start) .btn-primary:hover { background: #C2123E; }
+main > section:nth-of-type(n) :is(.card, .step-card, .tut-card, .blog-card, .option-card, .login-card, .cta-card, .contact-card, .tut-start) .btn-secondary:hover { background: #FFF1F4; }
+
+/* Wavier dividers: several smooth crests per screen */
+main > section + section::before {
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 32 C50 4 50 4 100 32 S150 60 200 32 S250 4 300 32 S350 60 400 32 V60 H0Z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: 400px 100%; mask-size: 400px 100%;
+  top: -40px; height: 42px; animation-name: waveDrift400;
+}
+main > section + section::after {
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 60' preserveAspectRatio='none'%3E%3Cpath d='M0 24 C65 52 65 52 130 24 S195 -4 260 24 S325 52 390 24 S455 -4 520 24 V60 H0Z' fill='%23000'/%3E%3C/svg%3E");
+  -webkit-mask-size: 520px 100%; mask-size: 520px 100%;
+  top: -56px; height: 58px; animation-name: waveDrift520;
+}
+@keyframes waveDrift400 { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: -400px 100%; mask-position: -400px 100%; } }
+@keyframes waveDrift520 { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: -520px 100%; mask-position: -520px 100%; } }
+main > section + section::before { animation-duration: 9s; }
+main > section + section::after  { animation-duration: 14s; }
+@media (max-width: 768px) {
+  main > section + section::before { -webkit-mask-size: 240px 100%; mask-size: 240px 100%; top: -28px; height: 30px; animation-name: waveDrift240; }
+  main > section + section::after  { -webkit-mask-size: 320px 100%; mask-size: 320px 100%; top: -40px; height: 42px; animation-name: waveDrift320; }
+}
+@keyframes waveDrift240 { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: -240px 100%; mask-position: -240px 100%; } }
+@keyframes waveDrift320 { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: -320px 100%; mask-position: -320px 100%; } }
+main > section:first-of-type + section::before,
+main > section:first-of-type + section::after { animation: none; }
+@media (prefers-reduced-motion: reduce) { main > section + section::before, main > section + section::after { animation: none; } }
