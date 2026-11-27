@@ -817,3 +817,13 @@ main > section + section:nth-of-type(4n)::before {
   main > section + section:nth-of-type(4n)::before { top: -16px; height: 18px; -webkit-mask-size: 520px 100%; mask-size: 520px 100%; animation: waveDrift520 40s linear infinite; }
 }
 @media (prefers-reduced-motion: reduce) { main > section + section:nth-of-type(4n)::before { animation: none; } }
+/* Deeper curves on the slow wave */
+main > section + section:nth-of-type(4n)::before {
+  --div: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 60' preserveAspectRatio='none'%3E%3Cpath d='M0 32 C200 2 200 2 400 32 S600 62 800 32 V60 H0Z' fill='%23000'/%3E%3C/svg%3E");
+  top: -42px; height: 44px;
+}
+@media (max-width: 768px) {
+  main > section + section:nth-of-type(4n)::before { top: -30px; height: 32px; -webkit-mask-size: 420px 100%; mask-size: 420px 100%; animation: waveDrift420 40s linear infinite; }
+}
+@keyframes waveDrift420 { from { -webkit-mask-position: 0 100%; mask-position: 0 100%; } to { -webkit-mask-position: -420px 100%; mask-position: -420px 100%; } }
+@media (prefers-reduced-motion: reduce) { main > section + section:nth-of-type(4n)::before { animation: none; } }
