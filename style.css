@@ -551,3 +551,10 @@ body.tut-lock { overflow: hidden; }
 .guide-link h3 { font-size: 1.0625rem; margin-bottom: 4px; color: var(--text); }
 .guide-link p { font-size: .9375rem; }
 @media (prefers-reduced-motion: reduce) { .guide-link, .guide-link:hover { transition: none; transform: none; } }
+.tut-start {
+  max-width: 780px; margin: 0 auto clamp(16px, 4vw, 28px); padding: clamp(14px, 3.5vw, 22px);
+  text-align: center; background: var(--accent-soft); border: 1px solid #FFD6DF; border-radius: var(--radius);
+}
+.tut-start-label { display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+.tut-start .btn { width: 100%; max-width: 360px; justify-content: center; }
+.tut-start-next { margin-top: 10px; font-size: .9375rem; }
