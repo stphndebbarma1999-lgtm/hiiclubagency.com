@@ -488,3 +488,33 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .policy-table th, .policy-table td { padding: 10px 12px; }
 }
 @media (max-width: 380px) { .logo-text { font-size: 1.2rem; } }
+
+/* ---- Photo step-by-step guides ---- */
+.photo-steps { display: grid; gap: var(--s6); max-width: 880px; margin: 0 auto; counter-reset: none; }
+.photo-step {
+  display: grid; grid-template-columns: 220px 1fr; gap: var(--s6); align-items: center;
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: var(--s5); box-shadow: var(--shadow);
+}
+.photo-step-img { margin: 0; position: relative; }
+.photo-step-img img {
+  display: block; width: 100%; height: auto; aspect-ratio: 9 / 19.5; object-fit: cover;
+  border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-2);
+}
+.photo-step-img.is-missing::before {
+  content: 'Photo coming soon'; display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 9 / 19.5; border: 2px dashed var(--border); border-radius: var(--radius-sm);
+  background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .9375rem;
+}
+.photo-step-img figcaption { margin-top: 8px; text-align: center; font-size: .8125rem; color: var(--text-2, #5A5A66); font-weight: 600; }
+.photo-step-num {
+  display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px;
+  border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; margin-bottom: var(--s3);
+}
+.photo-step-body h3 { font-size: 1.1875rem; margin-bottom: 8px; }
+.photo-step-body p { font-size: 1rem; }
+@media (max-width: 640px) {
+  .photo-step { grid-template-columns: 1fr; text-align: center; padding: var(--s4); gap: var(--s4); }
+  .photo-step-img { max-width: 240px; margin: 0 auto; }
+  .photo-step-body { order: -1; }
+}
