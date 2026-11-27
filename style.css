@@ -558,3 +558,10 @@ body.tut-lock { overflow: hidden; }
 .tut-start-label { display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
 .tut-start .btn { width: 100%; max-width: 360px; justify-content: center; }
 .tut-start-next { margin-top: 10px; font-size: .9375rem; }
+.tut-cap { margin-top: clamp(6px, 1.6vw, 10px); font-size: clamp(.8125rem, 3.2vw, .9375rem); line-height: 1.4; text-align: center; color: var(--text-2); }
+.tut-zoom { margin-top: 0; }
+.tut-card { justify-content: flex-start; }
+@supports (grid-template-rows: subgrid) {
+  .tut-card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+  .tut-card .tut-zoom { align-self: start; }
+}
